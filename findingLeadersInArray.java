@@ -3,8 +3,9 @@ public class findingLeadersInArray {
 
     public static void leadersInArray(int arr[], int size){
 
+        //Creating Stack to store leaders.
         Stack<Integer> stackObj = new Stack<Integer>();
-        Stack.stackObj.push(arr[size-1]);
+        stackObj.push(arr[size-1]);
 
         for(int index=size-2; index>=0; index--){
             if(arr[index]>stackObj.peek()){
@@ -12,9 +13,10 @@ public class findingLeadersInArray {
             }
         }
 
+        //Printing Stack Elements, running the loop until the Stack is 
+        //not empty.
         while(!stackObj.empty()){
-            for(int index=0; index<size; index++)
-                System.out.print(arr[index] + " ");
+                System.out.print(stackObj.pop() + " ");
         }
     }
     public static void main(String[] args) {
