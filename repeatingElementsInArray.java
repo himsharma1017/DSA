@@ -14,7 +14,7 @@ public class repeatingElementsInArray {
         return -1;
     }
     public static void main(String[] args) {
-        int arr[] = { 0, 3, 7, 8, 2,2, 1, 4 };
+        int arr[] = { 0, 3, 7, 8, 2 ,2, 1, 4 };
         duplicatesInArray(arr, arr.length);
     }
 }
