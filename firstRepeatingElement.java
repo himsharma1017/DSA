@@ -1,22 +1,31 @@
+import java.util.*;
 public class firstRepeatingElement {
 
-    public static int firstRepeatingElement(int arr[], int size){
+    public static void identifyingFirstRepEl(int arr[], int size){
 
-        for(int index=0; index<size; index++){
-            for(int index2=index+1; index2<size; index2++){
-                if(arr[index]==arr[index2])
-                    return index2;
-            }
+        //Initializing the Index of the First Repeating Element.
+        int min = -1;
+
+        //Creating an Empty HashSet.
+        HashSet<Integer> hashObj = new HashSet<>();
+
+        //Traversing the Array from Right to left.
+        for(int index=size-1; index>=0; index--){
+            
+            //If Element is already present in the HashSet, then Update min.
+            if(hashObj.contains(arr[index]))
+                min = index;
+            else        //Else Add Element to the Hash Set.
+                hashObj.add(arr[index]);
         }
-        return -1;
+
+        if(min!=-1)
+            System.out.println("The First Repeating Element is : " + arr[min]);
+        else
+            System.out.println("There is No Element which is repeated.");
     }
     public static void main(String[] args) {
-        int arr[] = {10, 5, 3, 4, 5, 3, 6};
-        int index = firstRepeatingElement(arr, arr.length);
-
-        if(index == -1)
-            System.out.println("There is no repeating element !");
-        else
-            System.out.println("First Repeating element exists at : " + index);
+        int arr[] = {1,2,3,4,2};
+        identifyingFirstRepEl(arr, arr.length);
     }
 }
