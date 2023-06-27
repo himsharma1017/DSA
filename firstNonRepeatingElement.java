@@ -1,22 +1,25 @@
+import java.util.*;
 public class firstNonRepeatingElement {
 
     public static int nonRepeatingElement(int arr[], int size){
-        for(int index1=0; index1<size; index1++){
-            int index2;
 
-            for(index2=0; index2<size; index2++){
-                if(index1!=index2 && arr[index1]==arr[index2])
-                break;
+        //Initializing a HashMap to store the frequency of elements.
+        HashMap<Integer,Integer> freq = new HashMap<>();
 
-            if(index2==size)
-                return arr[index1];
-            }
+        //Creating map with the frequency of each element.
+        for(int index: arr)
+            freq.put(index, freq.getOrDefault(index, 0)+1);
+
+        //Running a loop to find the first Non-repeating element.
+        for(int index: arr){
+            if(freq.get(index)==1)
+                return index;
         }
-        return -1;
+        return -1;          //If No-Repeating element is found.
     }
+
     public static void main(String[] args) {
         int arr[] = {9, 4, 9, 6, 7, 4};
-        int res = nonRepeatingElement(arr, arr.length);
-        System.out.println("First Non Repeating Element is : " + res);
+        System.out.println("First Non Repeating Element is : " + nonRepeatingElement(arr, arr.length));        
     }
 }
