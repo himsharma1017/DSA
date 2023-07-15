@@ -1,7 +1,7 @@
 import java.util.*;
 public class pairOfPosAndNeg {
 
-    public static void positiveAndNegpair(int arr[], int size){
+    public static void positiveAndNegPair(int arr[], int size){
 
         ArrayList<Integer> arrayObj = new ArrayList<>();
         HashMap<Integer,Integer> hashObj = new HashMap<>();
@@ -31,6 +31,6 @@ public class pairOfPosAndNeg {
     public static void main(String[] args) {
         int arr[] = { 4, 8, 9, -4, 1, -1, -8, -9 };
         System.out.print("Pair of Positive and Negative elements are : ");
-        positiveAndNegpair(arr, arr.length);
+        positiveAndNegPair(arr, arr.length);
     }
 }
